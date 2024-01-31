@@ -1,3 +1,9 @@
+<?php
+
+require_once "config.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +24,7 @@
                 <span class="ml-3 text-3xl" style="font-family: 'Alkatra', cursive;">E-Sports Competition</span>
             </a>
             <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                <a class="mr-5 hover:text-white text-2xl" style="font-family: 'Alkatra', cursive;">Home</a>
+                <a href="/index.html" class="mr-5 hover:text-white text-2xl" style="font-family: 'Alkatra', cursive;">Home</a>
                 <a class="mr-5 hover:text-white text-2xl" style="font-family: 'Alkatra', cursive;">Admin Login</a>
             </nav>
             <button
