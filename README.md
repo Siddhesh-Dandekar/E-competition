@@ -3,7 +3,7 @@ This project was developed for finial year students. Still Under Progress
 
 Road Map for Implementing this project 
 
-### Day 1 - Implement Signup and login page (backend)
+### Day 1 - Implement Signup and login page (backend) ✅
 ### Day 2 - Implement Admin Login and Detail check page (Backend)
 ### Day 3 - Implement Admin Verification of Form and Logout page
 ### Day 4 - Admin Storing E-sports Events Detail (Image - venue)
