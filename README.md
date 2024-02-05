@@ -4,7 +4,10 @@ This project was developed for finial year students. Still Under Progress
 Road Map for Implementing this project 
 
 ### Day 1 - Implement Signup and login page (backend) ✅
-### Day 2 - Implement Admin Login and Detail check page (Backend)
+### Day 2 - Implement Admin Login and Detail check page (Backend) 
+            
+            Lesson --> my password was not matching with the hashed password (Error - varchar(50) size was to small for storing hash password) this took me 2 hours to solve -- i am already missing the deadline but i can now sleep in peace 
+
 ### Day 3 - Implement Admin Verification of Form and Logout page
 ### Day 4 - Admin Storing E-sports Events Detail (Image - venue)
 ### Day 5 - Admin Storing blog (backend)
