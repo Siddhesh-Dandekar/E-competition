@@ -82,8 +82,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <span class="ml-3 text-3xl" style="font-family: 'Alkatra', cursive;">E-Sports Competition</span>
       </a>
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-        <a href="/index.html" class="mr-5 hover:text-white text-2xl" style="font-family: 'Alkatra', cursive;">Home</a>
-        <a class="mr-5 hover:text-white text-2xl" style="font-family: 'Alkatra', cursive;">Admin Login</a>
+        <a href="index.html" class="mr-5 hover:text-white text-2xl" style="font-family: 'Alkatra', cursive;">Home</a>
+        <a href="admin/admin_login.php" class="mr-5 hover:text-white text-2xl" style="font-family: 'Alkatra', cursive;">Admin Login</a>
       </nav>
       <button
         class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-white rounded text-2xl mt-4 md:mt-0">Contact
