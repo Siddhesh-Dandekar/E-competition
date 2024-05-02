@@ -1,5 +1,5 @@
 # E-competition
-This project was developed for finial year students. Still Under Progress
+This project was developed for final year students.
 
 Road Map for Implementing this project 
 
@@ -13,10 +13,10 @@ Road Map for Implementing this project
                
             Designed only frontend which took me 3 hours i was searching for templates but guess it was difficult for me to fit them in my sidebar website   
          
-### Day 5 - Admin Storing blog (backend)
-### Day 6 - Student Can see the Events 
-### Day 7 - Student Can see the blog
-### Day 8 - Student Can Register to those Events and view  
-### Day 9 - Student Can view to Past enrolled Events 
-### Day 10 - Student can Chat with others (part 1)
-### Day 11 - Student can chat with others (part 2)
+### Day 5 - Admin Storing blog (backend) ✅
+### Day 6 - Student Can see the Events ✅
+### Day 7 - Student Can see the blog ✅
+### Day 8 - Student Can Register to those Events and view   ✅
+### Day 9 - Student Can view to Past enrolled Events ✅
+### Day 10 - Student can Chat with others (part 1) ✅
+### Day 11 - Student can chat with others (part 2) ✅
