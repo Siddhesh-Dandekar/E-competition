@@ -4,9 +4,10 @@ session_start();
 
 // check if the user is already logged in
 if (isset($_SESSION['email_address'])) {
-  header("location: sub_folder/main.html");
+  header("location: sub_folder/category.php");
   exit;
 }
+
 require_once "config.php";
 
 $email_address = $password = $phone = $reward = "";
@@ -24,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
   if (empty($err)) {
-    $sql = "SELECT user_id, email_address, password, phone, reward FROM users WHERE email_address = ?";
+    $sql = "SELECT user_id, email_address, password, phone FROM users WHERE email_address = ?";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "s", $param_email_address);
     $param_email_address = $email_address;
@@ -34,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (mysqli_stmt_execute($stmt)) {
       mysqli_stmt_store_result($stmt);
       if (mysqli_stmt_num_rows($stmt) == 1) {
-        mysqli_stmt_bind_result($stmt, $id, $email_address, $hashed_password, $phone, $reward);
+        mysqli_stmt_bind_result($stmt, $id, $email_address, $hashed_password, $phone );
         if (mysqli_stmt_fetch($stmt)) {
           if (password_verify($password, $hashed_password)) {
             // this means the password is corrct. Allow user to login
@@ -42,11 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $_SESSION["email_address"] = $email_address;
             $_SESSION["phone"] = $phone;
             $_SESSION["user_id"] = $id;
-            $_SESSION["reward"] = $reward;
-            $_SESSION["loggedin"] = true;
+            $_SESSION["loggeduser"] = true;
 
             //Redirect user to welcome page
-            header("location: sub_folder/main.html");
+            header("location: sub_folder/category.php");
 
           }
         }

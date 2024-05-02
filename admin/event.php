@@ -34,7 +34,7 @@ require '../config.php';
       </a>
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
 
-        <a class="mr-5 hover:text-white text-2xl" style="font-family: 'Alkatra', cursive;">My Profile</a>
+        
         <a href="../logout.php" class="mr-5 hover:text-white text-2xl"
           style="font-family: 'Alkatra', cursive;">Logout</a>
       </nav>
@@ -51,8 +51,6 @@ require '../config.php';
 
   <section class="text-gray-600 body-font">
     <div>
-
-
       <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
         <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false"
           class="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"></div>
@@ -76,7 +74,8 @@ require '../config.php';
           </div>
 
           <nav class="mt-10">
-            <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100" href="dashboard.php">
+            <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+              href="dashboard.php">
               <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -88,8 +87,7 @@ require '../config.php';
               <span class="mx-3">Dashboard</span>
             </a>
 
-            <a class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25"
-              href="#">
+            <a class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25" href="#">
               <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -101,7 +99,7 @@ require '../config.php';
             </a>
 
             <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-              href="#">
+              href="blog.php">
               <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -113,7 +111,7 @@ require '../config.php';
             </a>
 
             <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-              href="#">
+              href="enroll.php">
               <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -121,7 +119,20 @@ require '../config.php';
                 </path>
               </svg>
 
-              <span class="mx-3">Manage Account</span>
+              <span class="mx-3">Enrolled Students</span>
+            </a>
+
+
+            <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+              href="games.php">
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                </path>
+              </svg>
+
+              <span class="mx-3">Add Games</span>
             </a>
           </nav>
         </div>
@@ -151,67 +162,6 @@ require '../config.php';
             </div>
 
             <div class="flex items-center">
-              <div x-data="{ notificationOpen: false }" class="relative">
-                <button @click="notificationOpen = ! notificationOpen"
-                  class="flex mx-4 text-gray-600 focus:outline-none">
-                  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    </path>
-                  </svg>
-                </button>
-
-                <div x-show="notificationOpen" @click="notificationOpen = false"
-                  class="fixed inset-0 z-10 w-full h-full" style="display: none;"></div>
-
-                <div x-show="notificationOpen"
-                  class="absolute right-0 z-10 mt-2 overflow-hidden bg-white rounded-lg shadow-xl w-80"
-                  style="width: 20rem; display: none;">
-                  <a href="#"
-                    class="flex items-center px-4 py-3 -mx-2 text-gray-600 hover:text-white hover:bg-indigo-600">
-                    <img class="object-cover w-8 h-8 mx-1 rounded-full"
-                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
-                      alt="avatar">
-                    <p class="mx-2 text-sm">
-                      <span class="font-bold" href="#">Sara Salah</span> replied on the <span
-                        class="font-bold text-indigo-400" href="#">Upload Image</span> artical .
-                      2m
-                    </p>
-                  </a>
-                  <a href="#"
-                    class="flex items-center px-4 py-3 -mx-2 text-gray-600 hover:text-white hover:bg-indigo-600">
-                    <img class="object-cover w-8 h-8 mx-1 rounded-full"
-                      src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"
-                      alt="avatar">
-                    <p class="mx-2 text-sm">
-                      <span class="font-bold" href="#">Slick Net</span> start following you . 45m
-                    </p>
-                  </a>
-                  <a href="#"
-                    class="flex items-center px-4 py-3 -mx-2 text-gray-600 hover:text-white hover:bg-indigo-600">
-                    <img class="object-cover w-8 h-8 mx-1 rounded-full"
-                      src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
-                      alt="avatar">
-                    <p class="mx-2 text-sm">
-                      <span class="font-bold" href="#">Jane Doe</span> Like Your reply on <span
-                        class="font-bold text-indigo-400" href="#">Test with TDD</span> artical
-                      . 1h
-                    </p>
-                  </a>
-                  <a href="#"
-                    class="flex items-center px-4 py-3 -mx-2 text-gray-600 hover:text-white hover:bg-indigo-600">
-                    <img class="object-cover w-8 h-8 mx-1 rounded-full"
-                      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=398&amp;q=80"
-                      alt="avatar">
-                    <p class="mx-2 text-sm">
-                      <span class="font-bold" href="#">Abigail Bennett</span> start following you
-                      . 3h
-                    </p>
-                  </a>
-                </div>
-              </div>
-
               <div x-data="{ dropdownOpen: false }" class="relative">
                 <button @click="dropdownOpen = ! dropdownOpen"
                   class="relative block w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none">
@@ -242,38 +192,63 @@ require '../config.php';
 
 
 
-              <div class="flex items-center flex-col mt-8">
+              <div class="flex flex-col mt-8">
                 <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                   <div
                     class="bg-gray-400 inline-block flex justify-center max-w-96 overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
-                    <div class="w-11/12 p-5">
-                      <form action="">
+                    <div class="w-full p-3">
+                      <form action="php_store_comp.php" method="post" enctype="multipart/form-data"
+                        class="max-w-sm mx-auto">
                         <div class="mb-2.5">
-                          <label for="large-input"
-                            class="block mb-2 text-base font-medium text-gray-900 dark:text-black">Enter Title</label>
-                          <input type="text" id="large-input"
-                            class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <label for="base-input"
+                            class="block mb-2 text-base font-medium text-gray-900 dark:text-black">Title</label>
+                          <input type="text" id="title" name="title"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </div>
                         <div class="mb-2.5">
                           <label for="base-input"
                             class="block mb-2 text-base font-medium text-gray-900 dark:text-black">Venue</label>
-                          <input type="text" id="base-input"
+                          <input type="text" id="venue" name="venue"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </div>
                         <div class="mb-2.5">
                           <label for="base-input"
                             class="block mb-2 text-base font-medium text-gray-900 dark:text-black">Price</label>
-                          <input type="text" id="base-input"
+                          <input type="text" id="price" name="price" min="0"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </div>
-                        <div class="mb-5">
-                          <label class="block mb-2 text-base font-medium text-gray-900 dark:text-black"
-                            for="file_input">Upload file</label>
+                        <div class="mb-2.5">
+                          <label for="countries"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an
+                            option</label>
+                          <?php $sql = "SELECT game_id, game_name FROM games";
+                          $result = $conn->query($sql);
+
+                          if ($result->num_rows > 0) {
+                            // Create options for select tag
+                            echo "<select name='game_id' class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'>";
+                            while ($row = $result->fetch_assoc()) {
+                              $game_id = $row["game_id"];
+                              $game_name = $row["game_name"];
+                              echo "<option value='$game_id'>$game_name</option>";
+                            }
+                            echo "</select>";
+                          } else {
+                            echo "No games found in the database.";
+                          }
+                          ?>
+                        </div>
+                        <div class="mb-2.5">
+
+                          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Upload
+                            file</label>
                           <input
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                            id="file_input" type="file">
-                        </div>
+                            type="file" id="image" name="image" accept="image/jpeg, image/png, image/gif">
+                          <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or
+                            GIF (MAX. 800x400px).</p>
 
+                        </div>
                         <div class="relative max-w-sm">
                           <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -282,12 +257,13 @@ require '../config.php';
                                 d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                             </svg>
                           </div>
-                          <input datepicker datepicker-autohide type="text"
+                          <input type="date" id="start_date" name="start_date"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Select date">
+                            placeholder="Select date" min="<?php echo date('Y-m-d'); ?>">
                         </div>
                         <div>
-                        <button class="flex mx-auto mt-5 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+                          <button type="submit"
+                            class="flex mx-auto mt-5 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
                         </div>
 
 

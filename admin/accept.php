@@ -29,7 +29,7 @@ require '../config.php';
 
         echo "<script>console.log('Debug Objects: " . $email . "' );</script>";
 
-        $query = "UPDATE `users` SET `account_status`='Verifed' WHERE email_address='$email'";
+        $query = "UPDATE `users` SET `account_status`='verified' WHERE email_address='$email'";
         $success = $conn->query($query);
         if (!$success) {
             $msg = "Failed to change order status";
@@ -42,7 +42,7 @@ require '../config.php';
         }
         if ($success) {
             echo "<script>
-                alert('Account Rejected');
+                alert('Account accepted');
                 window.location.href='dashboard.php';
                 </script>";
         }

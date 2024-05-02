@@ -5,7 +5,7 @@ session_start();
 // check if the user is already logged in
 if(isset($_SESSION['useradmin']))
 {
-    header("location: dashboard.html");
+    header("location: dashboard.php");
     exit;
 }
 require_once "../config.php";
